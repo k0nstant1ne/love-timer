@@ -184,6 +184,20 @@
             }
             lastTouchEnd = now;
         }, false);
+        
+        // Дозволити обробку натискання для таймера
+        let tapCount = 0;
+        const maxTapTime = 500; // Максимальний інтервал між двома тапами (в мс)
+        document.getElementById('countdown').addEventListener('touchend', function(e) {
+            tapCount++;
+            setTimeout(() => {
+                if (tapCount === 1) {
+                    // Одинарне натискання
+                    this.click();
+                }
+                tapCount = 0;
+            }, maxTapTime);
+        }, false);
     </script>
 </body>
 </html>
