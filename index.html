@@ -45,8 +45,8 @@
         }
         .heart {
             position: absolute;
-            width: 67.5px; /* Збільшено на 35% від 50px */
-            height: 67.5px; /* Збільшено на 35% від 50px */
+            width: 67.5px;
+            height: 67.5px; 
             background: url('images/heart.png') no-repeat center center;
             background-size: contain;
             animation: fall 5s forwards;
@@ -88,7 +88,7 @@
             const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
-            if (window.innerWidth <= 850) {
+            if (window.innerWidth <= 1200) {
                 document.getElementById('countdown').innerHTML =
                     days + " days <br>" + hours + " hours <br>" + minutes + " min <br>" + seconds + " sec ";
             } else {
